@@ -2,7 +2,7 @@ package com.anashamidkh.messenger.modal;
 
 import java.util.Date;
 
-import javax.xml.bind.annotation.XmlRootElement;
+//import javax.xml.bind.annotation.XmlRootElement;
 
 public class Profile {
 
