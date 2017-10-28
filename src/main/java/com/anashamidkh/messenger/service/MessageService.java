@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.anashamidkh.messenger.database.DatabaseClass;
+import com.anashamidkh.messenger.exception.DataNotFoundException;
 import com.anashamidkh.messenger.modal.Message;
 
 public class MessageService {
@@ -54,7 +55,14 @@ public class MessageService {
 	}
 	
 	public Message getMessage(long id) {
-		return messages.get(id);
+		//return messages.get(id);
+		
+		//Above line is commented. Because Now, I am adding code to handle exception
+		Message message = messages.get(id);
+		if(message == null) {
+			throw new DataNotFoundException("Message with id: " +id + " not found");
+		}
+		return message;
 	}
 	
 	public Message addMessage(Message message) {
